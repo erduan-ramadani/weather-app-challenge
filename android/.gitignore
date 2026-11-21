@@ -1,0 +1,22 @@
+
+# Android Studio
+*.iml
+.gradle/
+.kotlin/
+.DS_Store
+/.idea/
+
+# Local configuration
+local.properties
+
+# Build outputs
+**/build/
+captures/
+
+# Native build
+.externalNativeBuild/
+.cxx/
+
+# Signing keys
+*.jks
+*.keystore
