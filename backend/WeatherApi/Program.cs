@@ -23,6 +23,8 @@ builder.Services.AddHttpClient<IOpenMeteoClient, OpenMeteoClient>(
 
 builder.Services.AddScoped<CityService>();
 
+builder.Services.AddScoped<WeatherService>();
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
