@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using WeatherApi.Data;
 using WeatherApi.Repositories;
 using WeatherApi.Clients;
+using WeatherApi.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -19,6 +20,8 @@ builder.Services.AddHttpClient<IOpenMeteoClient, OpenMeteoClient>(
     {
         client.Timeout = TimeSpan.FromSeconds(10);
     });
+
+builder.Services.AddScoped<CityService>();
 
 builder.Services.AddOpenApi();
 
