@@ -1,5 +1,6 @@
-# Visual Studio
-.vs/
+
+# Visual Studio / .NET
+**/.vs/
 *.user
 *.suo
 *.rsuser
@@ -12,7 +13,32 @@
 **/TestResults/
 *.trx
 
-# Local secrets and certificates
+# Android Studio / IntelliJ
+**/.idea/
+*.iml
+
+# Gradle / Kotlin
+**/.gradle/
+**/.kotlin/
+**/build/
+**/local.properties
+
+# Android build artifacts
+*.apk
+*.aab
+
+# Signing keys and certificates
+*.jks
+*.keystore
 *.pfx
 *.p12
 *.key
+
+# Local environment and secrets
+.env
+.env.*
+!.env.example
+
+# Operating system
+.DS_Store
+Thumbs.db
