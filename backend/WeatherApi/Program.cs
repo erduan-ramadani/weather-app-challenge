@@ -13,18 +13,16 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("WeatherDb"));
 
 builder.Services.AddScoped<ICityRepository, CityRepository>();
+builder.Services.AddScoped<IWeatherRepository, WeatherRepository>();
 
 builder.Services.AddScoped<CityService>();
+builder.Services.AddScoped<WeatherService>();
 
 builder.Services.AddHttpClient<IOpenMeteoClient, OpenMeteoClient>(
     client =>
     {
         client.Timeout = TimeSpan.FromSeconds(10);
     });
-
-builder.Services.AddScoped<CityService>();
-
-builder.Services.AddScoped<WeatherService>();
 
 builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 builder.Services.AddProblemDetails();
