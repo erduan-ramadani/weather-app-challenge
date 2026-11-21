@@ -3,6 +3,7 @@ using WeatherApi.Data;
 using WeatherApi.Repositories;
 using WeatherApi.Clients;
 using WeatherApi.Services;
+using WeatherApi.Exceptions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,9 +26,14 @@ builder.Services.AddScoped<CityService>();
 
 builder.Services.AddScoped<WeatherService>();
 
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
+builder.Services.AddProblemDetails();
+
 builder.Services.AddOpenApi();
 
 var app = builder.Build();
+
+app.UseExceptionHandler();
 
 if (app.Environment.IsDevelopment())
 {
