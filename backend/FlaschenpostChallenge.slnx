@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="WeatherApi.Tests/WeatherApi.Tests.csproj" Id="de1ac64e-bd40-4390-8a7c-db5311f59106" />
+  <Project Path="WeatherApi/WeatherApi.csproj" />
+</Solution>
