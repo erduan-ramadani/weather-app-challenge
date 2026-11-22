@@ -1,0 +1,28 @@
+
+@baseUrl = http://localhost:5152
+
+### Alle Städte abrufen
+GET {{baseUrl}}/api/cities
+
+### Städte suchen
+GET {{baseUrl}}/api/cities/search?name=heidelberg
+
+### Stadt hinzufügen
+# locationId aus der Städtesuche übernehmen
+POST {{baseUrl}}/api/cities
+Content-Type: application/json
+
+{
+  "locationId": 2907911
+}
+
+### Aktuelles Wetter
+GET {{baseUrl}}/api/weather/current
+
+### Stadt auswählen
+# ID der gespeicherten Stadt verwenden
+PUT {{baseUrl}}/api/cities/1/select
+
+### Stadt löschen
+# ID der gespeicherten Stadt verwenden
+DELETE {{baseUrl}}/api/cities/2
